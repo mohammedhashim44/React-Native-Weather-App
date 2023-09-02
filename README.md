@@ -1,5 +1,5 @@
 # React-Native-Weather-App
-An app built with React Native and open-meteo APIs to track weather
+### An app built with React Native Expo and open-meteo APIs to track weather
 -------------  
 
 #### Expo SDK Version Used : 49.0.5
