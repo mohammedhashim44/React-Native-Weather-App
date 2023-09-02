@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Linking, TouchableOpacity, ImageBackground } from "react-native";
+
 import AppText from "../../components/AppText";
 import { getRandomeImage } from "../../data/BackgroundImages";
 import AppColors from "../../theme/Colors";
@@ -49,7 +50,7 @@ const TextAndLink = (props: {
 }) => {
   const onLinkClicked = () => {
     Linking.openURL(props.link).catch((err) =>
-      console.error("Couldn't load page", err)
+      console.error("Couldn't load page", err),
     );
   };
 
