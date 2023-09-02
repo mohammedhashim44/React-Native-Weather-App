@@ -1,17 +1,10 @@
 import React from "react";
 import { View, Linking, TouchableOpacity, ImageBackground } from "react-native";
-
 import AppText from "../../components/AppText";
 import { getRandomeImage } from "../../data/BackgroundImages";
 import AppColors from "../../theme/Colors";
 
 const AboutScreen = () => {
-  const onGithubClicked = () => {
-    Linking.openURL("https://www.google.com").catch((err) =>
-      console.error("Couldn't load page", err),
-    );
-  };
-
   return (
     <ImageBackground
       source={{ uri: getRandomeImage() }}
@@ -23,36 +16,57 @@ const AboutScreen = () => {
         className="flex flex-col items-center justify-evenly h-full"
         style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
       >
-        <View className="flex flex-col items-center">
-          <AppText>Developed By</AppText>
-          <TouchableOpacity onPress={onGithubClicked}>
-            <AppText className="text-2xl border-b-2 border-red-500 " isBold>
-              Mohammed Hashim
-            </AppText>
-          </TouchableOpacity>
-        </View>
+        <TextAndLink
+          text="Developed By"
+          linkText="Mohammed Hashim"
+          link="https://www.linkedin.com/in/mohammed-hashim-25764b1b2/"
+        />
 
-        <View className="flex flex-col items-center">
-          <AppText>Source Code</AppText>
-          <TouchableOpacity onPress={onGithubClicked}>
-            <AppText className="text-2xl border-b-2 border-red-500 " isBold>
-              Github
-            </AppText>
-          </TouchableOpacity>
-        </View>
+        <TextAndLink
+          text="Source Code"
+          linkText="Github"
+          link="https://github.com/mohammedhashim44/React-Native-Weather-App"
+        />
 
-        <View className="flex flex-col items-center">
-          <AppText>My Portfolio</AppText>
-          <TouchableOpacity onPress={onGithubClicked}>
-            <AppText className="text-md border-b-2 border-red-500 " isBold>
-              https://mohammed-hashim.com/
-            </AppText>
-          </TouchableOpacity>
-        </View>
+        <TextAndLink
+          text="My Portfolio"
+          linkText="https://mohammed-hashim.com/"
+          link="https://mohammed-hashim.com/"
+          linkTextClass="text-lg"
+        />
 
         <View className="h-4" />
       </View>
     </ImageBackground>
+  );
+};
+
+const TextAndLink = (props: {
+  text: string;
+  link: string;
+  linkText: string;
+  linkTextClass?: string;
+}) => {
+  const onLinkClicked = () => {
+    Linking.openURL(props.link).catch((err) =>
+      console.error("Couldn't load page", err)
+    );
+  };
+
+  return (
+    <View className="flex flex-col items-center">
+      <AppText>{props.text}</AppText>
+      <TouchableOpacity onPress={onLinkClicked} activeOpacity={0.7}>
+        <AppText
+          className={
+            `text-2xl border-b-2 border-red-500 ` + props.linkTextClass ?? ""
+          }
+          isBold
+        >
+          {props.linkText}
+        </AppText>
+      </TouchableOpacity>
+    </View>
   );
 };
 
