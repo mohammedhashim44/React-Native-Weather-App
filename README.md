@@ -8,7 +8,9 @@
   
 -------------  
 
-## Screenshots  
+<img src="screenshots/poster.png" width="100%" />
+
+## Screenshots 
 
 <p float="left">
   <img src="screenshots/7.jpg" width="200" />
