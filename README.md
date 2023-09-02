@@ -7,6 +7,10 @@
 #### Design Files on Figma : [Apple Weather App Clone](https://www.figma.com/community/file/1045320388292781743)  
   
 -------------  
+#### How to run
+###### Clone, then on the root run `npx expo start -c`.
+###### Download [Expo App](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=U) and scan the QR with it and it should start working
+-------------  
 
 <img src="screenshots/poster.png" width="100%" />
 
